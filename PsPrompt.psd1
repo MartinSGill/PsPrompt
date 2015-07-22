@@ -12,7 +12,7 @@
 RootModule = 'PsPrompt.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.1'
+ModuleVersion = '0.2'
 
 # ID used to uniquely identify this module
 GUID = '41ad8aaf-ff7e-42be-8c8e-3bc89cc15857'
@@ -21,7 +21,7 @@ GUID = '41ad8aaf-ff7e-42be-8c8e-3bc89cc15857'
 Author = 'Martin Gill'
 
 # Company or vendor of this module
-CompanyName = 'MartinSGill.co.uk'
+CompanyName = ''
 
 # Copyright statement for this module
 Copyright = '2014 Martin Gill'
@@ -48,7 +48,7 @@ PowerShellVersion = '3.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @('ColorText')
+# RequiredModules = @('')
 
 # Assemblies that must be loaded prior to importing this module
 # RequiredAssemblies = @()
@@ -70,16 +70,16 @@ NestedModules = @(
         )
 
 # Functions to export from this module
-FunctionsToExport = '*'
+# FunctionsToExport = '*'
 
 # Cmdlets to export from this module
-CmdletsToExport = '*'
+# CmdletsToExport = '*'
 
 # Variables to export from this module
-VariablesToExport = ''
+# VariablesToExport = ''
 
 # Aliases to export from this module
-AliasesToExport = '*'
+# AliasesToExport = '*'
 
 # List of all modules packaged with this module
 # ModuleList = @()
@@ -97,4 +97,3 @@ AliasesToExport = '*'
 #DefaultCommandPrefix = 'Prompt'
 
 }
-
