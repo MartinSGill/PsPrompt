@@ -33,6 +33,14 @@ $global:PsPrompt = [psobject]@{
     Colors = $promptColors
 }
 
+Get-Command git.exe -ErrorAction SilentlyContinue
+if (!$?)
+{
+    Set-PromptOption -ShowGitBranch $false
+}
+
+### Exports
+
 Export-ModuleMember -Function Write-Prompt
 Export-ModuleMember -Function Set-PromptOption
 New-Alias -Name prompt -Value Write-Prompt
