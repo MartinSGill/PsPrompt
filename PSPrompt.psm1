@@ -28,7 +28,7 @@ $promptColors = [psobject]@{
     NonAdmin = 'White'
 }
 
-$global:PsPrompt = [psobject]@{
+$PsPrompt = [psobject]@{
     Options = $promptOptions
     Colors = $promptColors
 }
@@ -40,7 +40,7 @@ if (!$?)
 }
 
 ### Exports
-
+Export-ModuleMember -Variable PSPrompt
 Export-ModuleMember -Function Write-Prompt
 Export-ModuleMember -Function Set-PromptOption
 New-Alias -Name prompt -Value Write-Prompt
