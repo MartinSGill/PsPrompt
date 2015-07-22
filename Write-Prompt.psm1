@@ -1,4 +1,5 @@
-﻿Set-StrictMode -Version Latest
+﻿#requires -Version 2
+Set-StrictMode -Version Latest
 
 ##################################################
 ## Prompt Function File

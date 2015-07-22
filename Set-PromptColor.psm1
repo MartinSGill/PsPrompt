@@ -1,14 +1,15 @@
-﻿<#
-    .SYNOPSIS
-    Set Colors for prompt elements.
+﻿#requires -Version 2
+<#
+        .SYNOPSIS
+        Set Colors for prompt elements.
 
-    .DESCRIPTION
-    Use this to control the color of elements displyed by
-    the prompt.
+        .DESCRIPTION
+        Use this to control the color of elements displyed by
+        the prompt.
 
-    If you want to ensure your prompt looks the same every
-    time you start PowerShell call this cmdlet in your
-    $profile right after importing this module.
+        If you want to ensure your prompt looks the same every
+        time you start PowerShell call this cmdlet in your
+        $profile right after importing this module.
 #>
 
 function Set-PromptColor
@@ -74,7 +75,7 @@ function Set-PromptColor
         ForEach ($param in $PSBoundParameters.Keys)
         {
             $value = $PSBoundParameters[$param]
-            Write-Verbose "Setting '$param' to '$value'"
+            Write-Verbose -Message "Setting '$param' to '$value'"
             $PsPrompt.Colors[$param] = $value
         }
     }

@@ -1,36 +1,37 @@
+#requires -Version 2 -Modules PsPrompt
 
 
 $promptOptions = [psobject]@{
-    ShowUserName = $true
+    ShowUserName     = $true
     ShowComputerName = $true
-    ShowTime = $true
-    TimeFormat = 'HHmm'
+    ShowTime         = $true
+    TimeFormat       = 'HHmm'
     ShowArchitecture = $true
-    ShowGitBranch = $true
-    ShowPath = $true
-    PathOnNewLine = $true
-    ShowAdmin = $true
+    ShowGitBranch    = $true
+    ShowPath         = $true
+    PathOnNewLine    = $true
+    ShowAdmin        = $true
 }
 
 $promptColors = [psobject]@{
     TextForeground = 'Gray'
     TextBackground = 'Black'
-    UserName = 'Magenta'
-    ComputerName = 'Green'
-    ComputerDelim = 'White'
-    Time = 'White'
-    TimeDelim = 'Green'
-    Architecture = 'Red'
-    GitBranch = 'Yellow'
+    UserName       = 'Magenta'
+    ComputerName   = 'Green'
+    ComputerDelim  = 'White'
+    Time           = 'White'
+    TimeDelim      = 'Green'
+    Architecture   = 'Red'
+    GitBranch      = 'Yellow'
     GitBranchDelim = 'Yellow'
-    Path = 'Cyan'
-    Admin = 'Red'
-    NonAdmin = 'White'
+    Path           = 'Cyan'
+    Admin          = 'Red'
+    NonAdmin       = 'White'
 }
 
 $PsPrompt = [psobject]@{
     Options = $promptOptions
-    Colors = $promptColors
+    Colors  = $promptColors
 }
 
 Get-Command git.exe -ErrorAction SilentlyContinue
