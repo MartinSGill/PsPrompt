@@ -12,7 +12,7 @@
 RootModule = 'PsPrompt.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.2'
+ModuleVersion = '0.3'
 
 # ID used to uniquely identify this module
 GUID = '41ad8aaf-ff7e-42be-8c8e-3bc89cc15857'
@@ -65,7 +65,6 @@ PowerShellVersion = '3.0'
 # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
 NestedModules = @(
             'Set-PromptOption.psm1',
-            'prompt.psm1',
             'Write-Prompt.psm1'
         )
 
@@ -79,13 +78,16 @@ NestedModules = @(
 # VariablesToExport = ''
 
 # Aliases to export from this module
-# AliasesToExport = '*'
+# AliasesToExport = 'prompt'
 
 # List of all modules packaged with this module
 # ModuleList = @()
 
 # List of all files packaged with this module
-# FileList = @()
+FileList = @(
+                'Set-PromptOption.psm1',
+                'Write-Prompt.psm1'
+)
 
 # Private data to pass to the module specified in RootModule/ModuleToProcess
 # PrivateData = ''

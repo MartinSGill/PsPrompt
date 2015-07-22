@@ -33,5 +33,6 @@ $global:PsPrompt = [psobject]@{
     Colors = $promptColors
 }
 
-Export-ModuleMember -Function prompt
 Export-ModuleMember -Function Write-Prompt
+New-Alias -Name prompt -Value Write-Prompt
+Export-ModuleMember -Alias prompt
