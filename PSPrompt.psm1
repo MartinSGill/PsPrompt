@@ -1,13 +1,13 @@
 
 
 $promptOptions = [psobject]@{
-    UserName = $true
-    ComputerName = $true
-    Time = $true
+    ShowUserName = $true
+    ShowComputerName = $true
+    ShowTime = $true
     TimeFormat = 'HHmm'
-    Architecture = $true
-    GitBranch = $true
-    Path = $true
+    ShowArchitecture = $true
+    ShowGitBranch = $true
+    ShowPath = $true
     PathOnNewLine = $true
     ShowAdmin = $true
 }
@@ -34,5 +34,6 @@ $global:PsPrompt = [psobject]@{
 }
 
 Export-ModuleMember -Function Write-Prompt
+Export-ModuleMember -Function Set-PromptOption
 New-Alias -Name prompt -Value Write-Prompt
 Export-ModuleMember -Alias prompt

@@ -22,15 +22,15 @@ function Set-PromptOption
     [OutputType()]
     param(
         [Parameter(Position = 0, Mandatory = $false)]
-        [switch]
+        [boolean]
         $ShowUserName,
 
         [Parameter(Position = 0, Mandatory = $false)]
-        [switch]
+        [boolean]
         $ShowComputerName,
 
         [Parameter(Position = 0, Mandatory = $false)]
-        [switch]
+        [boolean]
         $ShowTime,
 
         [Parameter(Position = 0, Mandatory = $false)]
@@ -38,25 +38,30 @@ function Set-PromptOption
         $TimeFormat,
 
         [Parameter(Position = 0, Mandatory = $false)]
-        [switch]
+        [boolean]
         $ShowArchitecture,
 
         [Parameter(Position = 0, Mandatory = $false)]
-        [switch]
+        [boolean]
         $ShowGitBranch,
 
         [Parameter(Position = 0, Mandatory = $false)]
-        [switch]
+        [boolean]
         $ShowPath,
 
         [Parameter(Position = 0, Mandatory = $false)]
-        [switch]
+        [boolean]
         $PathOnNewline
     )
-
+    
     try 
     {
-        throw 'Not yet implemented, sorry.'
+        ForEach ($param in $PSBoundParameters.Keys)
+        {
+            $value = $PSBoundParameters[$param]
+            Write-Verbose "Setting '$param' to '$value'"
+            $PsPrompt.Options[$param] = $value
+        }
     }
     catch 
     {

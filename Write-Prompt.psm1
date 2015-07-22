@@ -11,15 +11,15 @@
 
 Function Write-PromptUserComputer()
 {
-    if ($PsPrompt.Options.UserName)
+    if ($PsPrompt.Options.ShowUserName)
     {
-        Write-Host -ForegroundColor $PsPrompt.Colors.UserName `
+        Write-Host -ForegroundColor $PsPrompt.Colors.ShowUserName `
         -BackgroundColor $PsPrompt.Colors.TextBackground `
         -NoNewline `
         -Object ([System.Security.Principal.WindowsIdentity]::GetCurrent().Name)
     }
 
-    if ($PsPrompt.Options.UserName -and $PsPrompt.Options.ComputerName)
+    if ($PsPrompt.Options.ShowUserName -and $PsPrompt.Options.ShowComputerName)
     {
         Write-Host -ForegroundColor $PsPrompt.Colors.ComputerDelim `
         -BackgroundColor $PsPrompt.Colors.TextBackground `
@@ -27,7 +27,7 @@ Function Write-PromptUserComputer()
         -Object '@'
     }
 
-    if ($PsPrompt.Options.ComputerName)
+    if ($PsPrompt.Options.ShowComputerName)
     {
         Write-Host -ForegroundColor $PsPrompt.Colors.ComputerName `
         -BackgroundColor $PsPrompt.Colors.TextBackground `
@@ -38,7 +38,7 @@ Function Write-PromptUserComputer()
 
 Function Write-PromptTime
 {
-    if ($PsPrompt.Options.Time)
+    if ($PsPrompt.Options.ShowTime)
     {
         Write-Host -ForegroundColor $PsPrompt.Colors.TimeDelim `
         -BackgroundColor $PsPrompt.Colors.TextBackground `
@@ -66,7 +66,7 @@ function Write-ConsoleTitle
 
 Function Write-PromptArchitecture
 {
-    if ($PsPrompt.Options.Architecture)
+    if ($PsPrompt.Options.ShowArchitecture)
     {
         Write-Host -ForegroundColor $PsPrompt.Colors.Architecture `
         -BackgroundColor $PsPrompt.Colors.TextBackground `
@@ -77,7 +77,7 @@ Function Write-PromptArchitecture
 
 Function Write-PromptGitBranch
 {
-    if ($PsPrompt.Options.GitBranch)
+    if ($PsPrompt.Options.ShowGitBranch)
     {
         try
         {
@@ -109,7 +109,7 @@ Function Write-PromptGitBranch
 
 Function Write-PromptPath
 {
-    if ($PsPrompt.Options.Path)
+    if ($PsPrompt.Options.ShowPath)
     {
         if ($PsPrompt.Options.PathOnNewLine)
         {
@@ -156,31 +156,31 @@ Function Write-PromptSymbol
 Function Write-Prompt
 {
     Write-PromptUserComputer
-    if ($PsPrompt.Options.UserName -and $PsPrompt.Options.ComputerName) 
+    if ($PsPrompt.Options.ShowUserName -and $PsPrompt.Options.ComputerName) 
     {
         Write-Host -NoNewline  -Object ' '
     }
     
     Write-PromptTime
-    if ($PsPrompt.Options.Time) 
+    if ($PsPrompt.Options.ShowTime) 
     {
         Write-Host -NoNewline  -Object ' '
     }
     
     Write-PromptArchitecture
-    if ($PsPrompt.Options.Architecture) 
+    if ($PsPrompt.Options.ShowArchitecture) 
     {
         Write-Host -NoNewline  -Object ' '
     }
     
     Write-PromptGitBranch
-    if ($PsPrompt.Options.GitBranch) 
+    if ($PsPrompt.Options.ShowGitBranch) 
     {
         Write-Host -NoNewline  -Object ' '
     }
     
     Write-PromptPath
-    if ($PsPrompt.Options.Path) 
+    if ($PsPrompt.Options.ShowPath) 
     {
         Write-Host -NoNewline  -Object ' '
     }
