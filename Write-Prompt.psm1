@@ -13,7 +13,7 @@ Function Write-PromptUserComputer()
 {
     if ($PsPrompt.Options.ShowUserName)
     {
-        Write-Host -ForegroundColor $PsPrompt.Colors.ShowUserName `
+        Write-Host -ForegroundColor $PsPrompt.Colors.UserName `
         -BackgroundColor $PsPrompt.Colors.TextBackground `
         -NoNewline `
         -Object ([System.Security.Principal.WindowsIdentity]::GetCurrent().Name)
@@ -156,7 +156,7 @@ Function Write-PromptSymbol
 Function Write-Prompt
 {
     Write-PromptUserComputer
-    if ($PsPrompt.Options.ShowUserName -and $PsPrompt.Options.ComputerName) 
+    if ($PsPrompt.Options.ShowUserName -and $PsPrompt.Options.ShowComputerName) 
     {
         Write-Host -NoNewline  -Object ' '
     }

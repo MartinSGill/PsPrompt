@@ -1,19 +1,14 @@
 ﻿<#
     .SYNOPSIS
-    A brief description of the function.
+    Set options to control the way the prompt is displayed.
 
     .DESCRIPTION
-    A detailed description of the function.
+    Use this to control what elements of the prompt are 
+    displayed.
 
-    .EXAMPLE
-    PS C:\> 
-
-    .EXAMPLE
-    PS C:\> 
-
-    .OUTPUTS
-    None
-
+    If you want to ensure your prompt looks the same every
+    time you start PowerShell call this cmdlet in your
+    $profile right after importing this module.
 #>
 
 function Set-PromptOption
