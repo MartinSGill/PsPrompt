@@ -12,7 +12,7 @@
 RootModule = 'PsPrompt.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.3'
+ModuleVersion = '0.4'
 
 # ID used to uniquely identify this module
 GUID = '41ad8aaf-ff7e-42be-8c8e-3bc89cc15857'
@@ -24,7 +24,7 @@ Author = 'Martin Gill'
 CompanyName = ''
 
 # Copyright statement for this module
-Copyright = '2014 Martin Gill'
+Copyright = '(C) 2014-2015 Martin Gill'
 
 # Description of the functionality provided by this module
 # Description = ''
@@ -65,6 +65,7 @@ PowerShellVersion = '3.0'
 # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
 NestedModules = @(
             'Set-PromptOption.psm1',
+            'Set-PromptColor.psm1',
             'Write-Prompt.psm1'
         )
 
@@ -86,6 +87,7 @@ NestedModules = @(
 # List of all files packaged with this module
 FileList = @(
                 'Set-PromptOption.psm1',
+                'Set-PromptColor.psm1',
                 'Write-Prompt.psm1'
 )
 

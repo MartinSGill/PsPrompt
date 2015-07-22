@@ -16,35 +16,35 @@ function Set-PromptOption
     [CmdletBinding()]
     [OutputType()]
     param(
-        [Parameter(Position = 0, Mandatory = $false)]
+        [Parameter(Mandatory = $false)]
         [boolean]
         $ShowUserName,
 
-        [Parameter(Position = 0, Mandatory = $false)]
+        [Parameter(Mandatory = $false)]
         [boolean]
         $ShowComputerName,
 
-        [Parameter(Position = 0, Mandatory = $false)]
+        [Parameter(Mandatory = $false)]
         [boolean]
         $ShowTime,
 
-        [Parameter(Position = 0, Mandatory = $false)]
+        [Parameter(Mandatory = $false)]
         [string]
         $TimeFormat,
 
-        [Parameter(Position = 0, Mandatory = $false)]
+        [Parameter(Mandatory = $false)]
         [boolean]
         $ShowArchitecture,
 
-        [Parameter(Position = 0, Mandatory = $false)]
+        [Parameter(Mandatory = $false)]
         [boolean]
         $ShowGitBranch,
 
-        [Parameter(Position = 0, Mandatory = $false)]
+        [Parameter(Mandatory = $false)]
         [boolean]
         $ShowPath,
 
-        [Parameter(Position = 0, Mandatory = $false)]
+        [Parameter(Mandatory = $false)]
         [boolean]
         $PathOnNewline
     )
