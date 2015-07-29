@@ -12,7 +12,7 @@
 RootModule = 'PsPrompt.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.4'
+ModuleVersion = '0.4.1'
 
 # ID used to uniquely identify this module
 GUID = '41ad8aaf-ff7e-42be-8c8e-3bc89cc15857'

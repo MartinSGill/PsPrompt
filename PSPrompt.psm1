@@ -1,5 +1,3 @@
-#requires -Version 2 -Modules PsPrompt
-
 
 $promptOptions = [psobject]@{
     ShowUserName     = $true
