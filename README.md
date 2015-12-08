@@ -3,7 +3,12 @@ PsPrompt
 [![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](http://opensource.org/licenses/MIT)
 
 A module that provides a customisable prompt for PowerShell.
-Fairly simple, works in all hosts and provides most some useful information.
+Fairly simple, works in all hosts and provides some useful information.
+
+Installation
+------------
+
+Clone into your PowerShell modules folder, then Import-Module PSPrompt
 
 License
 -------
