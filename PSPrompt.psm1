@@ -9,6 +9,7 @@ $promptOptions = [psobject]@{
     ShowPath         = $true
     PathOnNewLine    = $true
     ShowAdmin        = $true
+    ShortenPath      = $false
 }
 
 $promptColors = [psobject]@{
@@ -43,5 +44,6 @@ Export-ModuleMember -Variable PSPrompt
 Export-ModuleMember -Function Write-Prompt
 Export-ModuleMember -Function Set-PromptOption
 Export-ModuleMember -Function Set-PromptColor
+Export-ModuleMember -Function Write-PromptSegment
 New-Alias -Name prompt -Value Write-Prompt
 Export-ModuleMember -Alias prompt

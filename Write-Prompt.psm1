@@ -82,29 +82,31 @@ Function Write-PromptGitBranch
     {
         try
         {
-            $branch = (git.exe branch --no-color | Select-String -Pattern '\*\s+(\S+)').Matches.Groups[1].Value
-            if ($LASTEXITCODE -eq 0)
+            $branches = git.exe branch --no-color
+            if ($LASTEXITCODE -eq 0 -and -not [string]::IsNullOrWhiteSpace($branches))
             {
-                Write-Host -ForegroundColor $PsPrompt.Colors.GitBranchDelim `
-                -BackgroundColor $PsPrompt.Colors.TextBackground `
-                -NoNewline `
-                -Object '('
+                $re = [regex] '(?m)\*\s+([\S()]+)'
+                $match = $re.Match($branches)
+                if ($match.Success)
+                {
+                    Write-Host -ForegroundColor $PsPrompt.Colors.GitBranchDelim `
+                    -BackgroundColor $PsPrompt.Colors.TextBackground `
+                    -NoNewline `
+                    -Object '|'
+                
+                    Write-Host -ForegroundColor $PsPrompt.Colors.GitBranch `
+                    -BackgroundColor $PsPrompt.Colors.TextBackground `
+                    -NoNewline `
+                    -Object $match.Groups[1]
 
-                Write-Host -ForegroundColor $PsPrompt.Colors.GitBranch `
-                -BackgroundColor $PsPrompt.Colors.TextBackground `
-                -NoNewline `
-                -Object $branch
-
-                Write-Host -ForegroundColor $PsPrompt.Colors.GitBranchDelim `
-                -BackgroundColor $PsPrompt.Colors.TextBackground `
-                -NoNewline `
-                -Object ')'
+                    Write-Host -ForegroundColor $PsPrompt.Colors.GitBranchDelim `
+                    -BackgroundColor $PsPrompt.Colors.TextBackground `
+                    -NoNewline `
+                    -Object '|'
+                }
             }
         }
-        catch
-        {
-
-        }
+        catch {}
     }
 }
 
@@ -120,7 +122,7 @@ Function Write-PromptPath
         Write-Host -ForegroundColor $PsPrompt.Colors.Path `
         -BackgroundColor $PsPrompt.Colors.TextBackground `
         -NoNewline `
-        -Object (Get-Location)
+        -Object (Shorten-Path (Get-Location))
     }
 }
 
@@ -194,11 +196,15 @@ Function Write-Prompt
 Function Shorten-Path
 {
     param([string] $path)
-    $loc = $path.Replace($HOME, '~')
-    # remove prefix for UNC paths
-    $loc = $loc -replace '^[^:]+::', ''
-    # make path shorter like tabs in Vim,
-    # handle paths starting with \\ and . correctly
-    return ($loc -replace '\\(\.?)([^\\]{3})[^\\]*(?=\\)', '\$1$2')
+    if ($PsPrompt.Options.ShortenPath)
+    {
+        if ($path.Length -gt 20)
+        {
+            $left = $path.Substring(0,5)
+            $right = $path.Substring($path.Length - 16)
+            return $left + '…' + $right            
+        }
+    }
+    return $path;
 }
 
